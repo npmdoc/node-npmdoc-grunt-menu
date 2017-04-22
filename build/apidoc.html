@@ -1,0 +1,149 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ruyadorno/grunt-menu"
+
+    >grunt-menu (v1.0.2)</a>
+</h1>
+<h4>Useful menu interface for listing/executing your configured tasks</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-menu">module grunt-menu</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-menu.grunt-menu">
+            function <span class="apidocSignatureSpan"></span>grunt-menu
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-menu" id="apidoc.module.grunt-menu">module grunt-menu</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-menu.grunt-menu" id="apidoc.element.grunt-menu.grunt-menu">
+        function <span class="apidocSignatureSpan"></span>grunt-menu
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-menu = function (grunt) {
+  // load all npm grunt tasks
+  require(&#x27;load-grunt-tasks&#x27;)(grunt);
+
+  // Project configuration.
+  grunt.initConfig({
+    jshint: {
+      all: [
+        &#x27;Gruntfile.js&#x27;,
+        &#x27;tasks/*.js&#x27;,
+        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;
+      ],
+      options: {
+        jshintrc: &#x27;.jshintrc&#x27;,
+        reporter: require(&#x27;jshint-stylish&#x27;)
+      }
+    },
+
+    sg_release: {
+      options: {
+        skipBowerInstall: true,
+        developBranch: &#x27;develop&#x27;,
+        masterBranch: &#x27;master&#x27;,
+        files: [
+          &#x27;package.json&#x27;,
+          &#x27;README.md&#x27;
+        ],
+        commitMessage: &#x27;Release v%VERSION%&#x27;,
+        commitFiles: [&#x27;-a&#x27;], // &#x27;-a&#x27; for all files
+        pushTo: &#x27;origin&#x27;
+      }
+    },
+
+    // Unit tests.
+    nodeunit: {
+      tests: [&#x27;test/*_test.js&#x27;]
+    }
+
+  });
+
+  // Actually load this plugin&#x27;s task(s).
+  grunt.loadTasks(&#x27;tasks&#x27;);
+
+  grunt.registerTask(&#x27;test&#x27;, [&#x27;nodeunit&#x27;]);
+
+  grunt.registerTask(&#x27;release&#x27;, [&#x27;sg_release&#x27;]);
+
+  grunt.registerTask(&#x27;default&#x27;, [&#x27;jshint&#x27;, &#x27;test&#x27;]);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
